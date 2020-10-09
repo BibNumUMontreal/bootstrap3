@@ -43,7 +43,7 @@
 			<div class="page-header">
 				<h2>
 					{translate key="about.submissionPreparationChecklist"}
-					{include file="frontend/components/editLink.tpl" page="management" op="settings" path="publication" anchor="submissionStage" sectionTitleKey="about.submissionPreparationChecklist"}
+					{include file="frontend/components/editLink.tpl" page="management" op="settings" path="workflow" anchor="submission" sectionTitleKey="about.submissionPreparationChecklist"}
 				</h2>
 			</div>
 			<p class="lead description">
@@ -63,25 +63,25 @@
 	{* /Submission Checklist *}
 
 	{* Author Guidelines *}
-	{if $currentJournal->getLocalizedSetting('authorGuidelines')}
+	{if $currentJournal->getLocalizedData('authorGuidelines')}
 		<div class="author_guidelines">
 			<h2 class="page-header">
 				{translate key="about.authorGuidelines"}
-				{include file="frontend/components/editLink.tpl" page="management" op="settings" path="journal" anchor="guidelines" sectionTitleKey="about.authorGuidelines"}
+				{include file="frontend/components/editLink.tpl" page="management" op="settings" path="workflow" anchor="submission" sectionTitleKey="about.authorGuidelines"}
 			</h2>
-			{$currentJournal->getLocalizedSetting('authorGuidelines')}
+			{$currentJournal->getLocalizedData('authorGuidelines')}
 		</div>
 	{/if}
 	{* /Author Guidelines *}
 
 	{* Copyright Notice *}
-	{if $currentJournal->getLocalizedSetting('copyrightNotice')}
+	{if $currentJournal->getLocalizedData('copyrightNotice')}
 		<div class="copyright-notice">
 			<h2 class="page-header">
 				{translate key="about.copyrightNotice"}
-				</span>{include file="frontend/components/editLink.tpl" page="management" op="settings" path="journal" anchor="policies" sectionTitleKey="about.copyrightNotice"}
+				{include file="frontend/components/editLink.tpl" page="management" op="settings" path="distribution" anchor="license" sectionTitleKey="about.copyrightNotice"}
 			</h2>
-			{$currentJournal->getLocalizedSetting('copyrightNotice')}
+			{$currentJournal->getLocalizedData('copyrightNotice')}
 		</div>
 	{/if}
 	{* /Copyright Notice *}

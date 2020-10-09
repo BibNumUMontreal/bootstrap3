@@ -90,7 +90,7 @@
 			</div>
 			<div class="btn-group" role="group">
 				{foreach from=$issueGalleys item=galley}
-					{include file="frontend/objects/galley_link.tpl" parent=$issue purchaseFee=$currentJournal->getSetting('purchaseIssueFee') purchaseCurrency=$currentJournal->getSetting('currency')}
+					{include file="frontend/objects/galley_link.tpl" parent=$issue purchaseFee=$currentJournal->getData('purchaseIssueFee') purchaseCurrency=$currentJournal->getData('currency')}
 				{/foreach}
 			</div>
 		</div>
@@ -98,7 +98,7 @@
 
 	{* Articles *}
 	<div class="sections">
-		{foreach name=sections from=$publishedArticles item=section}
+		{foreach name=sections from=$publishedSubmissions item=section}
 			<section class="section">
 				{if $section.articles}
 					{if $section.title}
